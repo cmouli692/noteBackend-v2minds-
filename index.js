@@ -9,11 +9,7 @@ app = express()
 
 const port = 3001
 
-app.use({
-    cors({
-        origin  : "http://localhost:3000",
-    })
-})
+app.use(cors())
 
 const dbPath = path.join(__dirname,"notes.db")
 
