@@ -11,6 +11,12 @@ const port = 3001
 
 app.use(cors())
 
+const corsOptions = {
+    origin : "http://localhost:3000",
+    methods : "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials : true,
+}
+
 const dbPath = path.join(__dirname,"notes.db")
 
 let db = null 
