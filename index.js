@@ -1,12 +1,19 @@
 const sqlite3 = require("sqlite3").verbose()
 const express = require("express")
 const path = require("path")
+const cors = require("cors")
 const {open} = require("sqlite")
 
 
 app = express()
 
 const port = 3001
+
+app.use({
+    cors({
+        origin  : "http://localhost:3000",
+    })
+})
 
 const dbPath = path.join(__dirname,"notes.db")
 
